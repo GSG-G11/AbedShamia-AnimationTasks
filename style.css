@@ -36,6 +36,7 @@
 .btn:hover {
   border-radius: 0%;
   transform: rotate(25deg) scale(2) translateX(-50%) translateY(10%);
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-2 {
@@ -49,6 +50,7 @@
   transition: all 0.8s;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  animation: leftToRight 1.5s ease-in-out;
 }
 
 .btn-2:hover {
@@ -58,6 +60,15 @@
   border: none;
 }
 
+@keyframes leftToRight {
+  0% {
+    transform: translateX(-80%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .banner {
   display: flex;
   justify-content: center;
@@ -96,6 +107,46 @@ img {
   object-fit: cover;
   animation: moveTop 0.8s ease-in forwards, imageHeight 1s ease-in-out forwards 1s,
     imageScale 1s ease-in-out forwards 1.5s;
+}
+
+.task-3 {
+  width: 18rem;
+  height: 18rem;
+  text-align: center;
+  background-color: rgba(0, 71, 151, 0.521);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: task3 4s ease-in-out forwards, roundation 1.5s ease-in-out forwards 3.2s;
+  color: #8f6908d7;
+  font-size: 1.7rem;
+}
+
+@keyframes task3 {
+  0% {
+    width: 20rem;
+    transform: translateX(60vw) translateY(50vh);
+
+    opacity: 0;
+  }
+  50% {
+    width: 18rem;
+    opacity: 0.5;
+    transform: translateX(10vw) translateY(0vh);
+  }
+  100% {
+    transform: translateX(25vw);
+    opacity: 1;
+  }
+}
+
+@keyframes roundation {
+  0% {
+  }
+  100% {
+    border-radius: 50%;
+    transform: scale(1.2) translate(120%, -10%);
+  }
 }
 
 /* Image same width but not full displayed */
